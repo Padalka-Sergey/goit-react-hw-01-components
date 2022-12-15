@@ -6,14 +6,12 @@ export const Statistics = ({ title, stats }) => {
   return (
     <StatisticBox>
       {title && (<StatTitle>{title}</StatTitle>)}
-      
       <StatList>
         {stats.map(({ id, label, percentage }) => (
           <StatItem key={id}>
             <StatLabel>{label}</StatLabel>
             <StatQty>{percentage}</StatQty>
           </StatItem>))}
-    
       </StatList>
     </StatisticBox>
   ); 
@@ -21,8 +19,6 @@ export const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
- 
-  
   stats: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,
