@@ -2,24 +2,11 @@ import PropTypes from 'prop-types';
 import { StatisticBox, StatTitle, StatList, StatItem, StatLabel, StatQty  } from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
-  if (!title) {
-      return (
-<StatisticBox> 
-          <StatList>
-            {stats.map(stat => (
-    <StatItem key={stat.id}>
-      <StatLabel>{ stat.label }</StatLabel>
-      <StatQty>{ stat.percentage }</StatQty>
-    </StatItem>))}
-    
-  </StatList>
-</StatisticBox>
-    )
-  };
+
   return (
     <StatisticBox>
-      <StatTitle>{title}</StatTitle>
-
+      {title && (<StatTitle>{title}</StatTitle>)}
+      
       <StatList>
         {stats.map(({ id, label, percentage }) => (
           <StatItem key={id}>

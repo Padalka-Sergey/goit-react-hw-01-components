@@ -23,6 +23,7 @@ export const Status = styled.span`
     height: 20px;
     border-radius: 50%;
    background-color: ${bgc};
+   
 `;
 
 
